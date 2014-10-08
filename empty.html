@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Empty</title>
+    <script type="text/javascript" src="js/gg3d.js"></script>
+    <script type="text/javascript" src="js/empty.js"></script>
+    <script type="text/javascript" src="js/requestAnimationFrame.js"></script>
+    <style type="text/css">
+
+      body
+      {
+        margin: 0;
+        overflow: hidden;
+      }
+
+    </style>
+
+    <script id="fragment" type="x-shader/x-fragment">
+        void main()
+        {
+            gl_FragColor = vec4(0.2, 0.2, 0.2, 1.0);
+        }
+    </script>
+
+    <script id="vertex" type="x-shader/x-vertex">
+        attribute vec3 aVertexPosition;
+
+        void main(void)
+        {
+            gl_Position = vec4(aVertexPosition, 1.0);
+        }
+    </script>
+
+  </head>
+  <body>
+    <canvas id="webgl">No WebGL :(</canvas>
+  </body>
+</html>
