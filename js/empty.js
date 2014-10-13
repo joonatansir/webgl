@@ -31,12 +31,20 @@ function init()
     gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesBuffer);
 
     var vertices = [
-        0.0,  0.5,  0.0,
-        0.5, -0.5,  0.0,
-        -0.5,  -0.5, 0.0
+        0.0,  0.5,  -1.0,
+        0.5, -0.5,  -1.0,
+        -0.5,  -0.5, -1.0,
     ];
 
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+
+    var perspectiveMatrix = mat4.perspective(new Float32Array(16), Math.PI/2, 1.7, 1, 100);;
+    var uPerspective = gl.getUniformLocation(shaderProgram, "perspectiveMatrix");
+    gl.uniformMatrix4fv(uPerspective, gl.FALSE, perspectiveMatrix);
+
+    gl.enable(gl.CULL_FACE);
+    gl.cullFace(gl.BACK);
+    gl.frontFace(gl.CW);
 }
 
 function render(time)
