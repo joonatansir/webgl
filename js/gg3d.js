@@ -25,7 +25,7 @@ gg3d.createShader = function(gl, id)
 
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS))
     {
-        console.error("An error occurred compiling the shaders: " + gl.getShaderInfoLog(shader));
+        console.error("An error occurred compiling the "+ id + " shader: " + gl.getShaderInfoLog(shader));
         return null;
     }
 
