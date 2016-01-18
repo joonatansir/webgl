@@ -1,3 +1,3 @@
 # WebGL Experiments
 
-[demo](joonatansir.github.io/webgl/)
+[demo](http://joonatansir.github.io/webgl/)
